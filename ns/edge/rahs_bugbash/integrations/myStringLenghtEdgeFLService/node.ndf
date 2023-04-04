@@ -44,24 +44,17 @@
   <value name="retry_max">0</value>
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">rahs</value>
-    <value name="createdDate">1680588960135</value>
-    <value name="lastModifiedDate">1680588960135</value>
+    <value name="lastModifiedBy">rahs</value>
+    <value name="lastModifiedDate">1680589085149</value>
     <record name="edgeServer" javaclass="com.wm.util.Values">
       <value name="id">f6c0d30d55ab4874a45f577bdc71a22b</value>
-      <null name="group"/>
+      <value name="group">default</value>
       <value name="name">myEdgeServerRAHS03</value>
     </record>
     <value name="displayName">myStringLenghtEdgeFLService</value>
     <record name="stepNodeHints" javaclass="com.wm.util.Values">
       <record name="/0" javaclass="com.wm.util.Values">
-        <null name="name"/>
         <value name="itemType">SERVICES</value>
-        <record name="serviceInfo" javaclass="com.wm.util.Values">
-          <value name="groupDisplayName">String</value>
-          <value name="groupName">string</value>
-          <null name="services"/>
-        </record>
         <record name="serviceName" javaclass="com.wm.util.Values">
           <value name="displayName">length</value>
           <value name="serviceName">pub.string:length</value>
@@ -69,6 +62,8 @@
         </record>
         <number name="ui_step_index" type="Long">1</number>
         <number name="nodeIndex" type="Long">0</number>
+        <null name="mapSet"/>
+        <null name="outputMapSet"/>
       </record>
     </record>
   </record>
