@@ -7,6 +7,7 @@ pipeline {
             steps {
                 //echo "Start Build...!!"
                  bat 'docker --version'
+				 bat 'docker ps'
             }
         }
         stage('Test') { 
