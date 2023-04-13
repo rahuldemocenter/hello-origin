@@ -16,15 +16,18 @@ pipeline {
                 bat 'docker stop RAHS_Edge_Runtime04'
                echo "Trying to stop running instance"
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
-			   bat 'docker ps'
+		bat 'docker ps'
             }
         }
         stage('Start Edge Runtime') { 
             steps {
-                echo "Start Deploy...!!" 
-                bat 'docker start RAHS_Edge_Runtime04'
-				echo "Trying to start Edge Runtime instance....!!"
-				bat 'docker ps'
+                //echo "Start Deploy...!!" 
+                //bat 'docker start RAHS_Edge_Runtime04'
+		//echo "Trying to start Edge Runtime instance....!!"
+		echo "Start New Edge Runtime.....................................!!" 
+                bat 'docker run -p 5555:5555 -d -e SAG_IS_CLOUD_REGISTER_URL=https://originawsdev1.dev-int-aws-us.webmethods.io -e SAG_IS_EDGE_TENANT_ID=originawsdev1 -e SAG_IS_EDGE_CLOUD_ALIAS=EdgeServer_RAHS_Edge_Runtime05 -e SAG_IS_CLOUD_REGISTER_TOKEN=2f840873f0d740a38dac4021f5cef7f4f7673d3242304c309fc9ef9c1ce99b16 --name=RAHS_Edge_Runtime05 iregistry.eur.ad.sag/origin/webmethods-edge-runtime:latest'
+		echo "Trying to start new instance"
+		bat 'docker ps'
             }
         }
     }
