@@ -26,7 +26,7 @@ pipeline {
 		//echo "Trying to start Edge Runtime instance....!!"
 		   script {
                     //I want to get the same response here
-                    def response = sh(script: 'curl curl 'https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode/' \
+                    def response = sh(script: 'curl 'https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode/' \
   -H 'Accept: application/json, text/plain, */*' \
   -H 'Accept-Language: en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6' \
   -H 'Connection: keep-alive' \
@@ -44,7 +44,7 @@ pipeline {
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "Windows"' \
   -H 'x-csrf-token: d0d24654-3428-465c-bb07-ee8132d72b0e' \
-  --data-raw '{"name":"RAHS_Test_My_ERT02","description":""}' \
+  --data-raw '{"name":"RAHS_Test_My_ERT","description":""}' \
   --compressed', returnStdout: true)
                     echo '=========================Response===================' + response
                 }
