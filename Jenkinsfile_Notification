@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Notification') { 
             steps {
-                echo "Notification step...!!"
+                echo "Notification step - NEW CHECK IN...!!"
             }
         }
     }
