@@ -43,7 +43,6 @@ pipeline {
   -H "sec-ch-ua-mobile: ?0" \
   -H "sec-ch-ua-platform: "Windows"" \
   -H "x-csrf-token: d0d24654-3428-465c-bb07-ee8132d72b0e" \
- // --data-raw '{"name":"RAHS_Test_My_ERT","description":""}' \
   --compressed', returnStdout: true)
                     echo '=========================Response===================' + response
                 }
