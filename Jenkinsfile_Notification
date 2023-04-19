@@ -1,0 +1,11 @@
+#!groovy
+pipeline {
+    agent any
+    stages {
+        stage('Notification') { 
+            steps {
+                echo "Notification step...!!"
+            }
+        }
+    }
+}
