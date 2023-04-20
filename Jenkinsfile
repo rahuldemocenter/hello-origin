@@ -43,7 +43,8 @@ pipeline {
   -H "sec-ch-ua: "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"" \
   -H "sec-ch-ua-mobile: ?0" \
   -H "sec-ch-ua-platform: "Windows"" \
-  -H "x-csrf-token: 8f1039ab-8959-4527-b5b5-d8585d8dd0f8" \', returnStdout: true)
+  -H "x-csrf-token: 8f1039ab-8959-4527-b5b5-d8585d8dd0f8" \
+				       ', returnStdout: true)
                     echo '=========================Response===================' + response
                 }
 		echo "Start New Edge Runtime.....................................!!" 
