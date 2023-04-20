@@ -44,6 +44,7 @@ pipeline {
   -H "sec-ch-ua-mobile: ?0" \
   -H "sec-ch-ua-platform: "Windows"" \
   -H "x-csrf-token: 8f1039ab-8959-4527-b5b5-d8585d8dd0f8" \
+  --data-raw "{"name":"RAHS_ABCD","description":""}" \
 				       ', returnStdout: true)
                     echo '=========================Response===================' + response
                 }
