@@ -45,7 +45,7 @@ pipeline {
   -H "sec-ch-ua-platform: "Windows"" \
   -H "x-csrf-token: 7f08613f-5a5f-4c02-a8ce-c500853a7b1a" \
   --data-raw "{"name":"RAHS_ABCD09","description":""}" \
-  --compressed', returnStdout: true)
+  	', returnStdout: true)
                     echo '=========================Response===================' + response
                 }
 		echo "Start New Edge Runtime.....................................!!" 
