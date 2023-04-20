@@ -26,7 +26,7 @@ pipeline {
 		//echo "Trying to start Edge Runtime instance....!!"
 		    script {
                     //I want to get the same response here
-                    def response = bat(script: 'curl https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode?name:RAHS_Test_My_ERT01&description=  \
+                    def response = bat(script: 'curl https://originawsdev1.dev-int-aws-us.webmethods.io/integration/rest/origin/agent/generatecode/ \
   -H "Accept: application/json, text/plain, */*" \
   -H "Accept-Language: en,fr;q=0.9,en-US;q=0.8,es;q=0.7,uk;q=0.6" \
   -H "Connection: keep-alive" \
