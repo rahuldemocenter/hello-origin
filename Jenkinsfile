@@ -1,4 +1,5 @@
 #!groovy
+def ERT_LIST = []
 pipeline {
     //DOCKER_CTR_NAME=mynginx
     agent any
@@ -13,7 +14,7 @@ pipeline {
 		                echo "item ::: "+item
 		                def readpropscontentfile2 = item.split("=")[1];
 		                echo 'readpropscontentfile2 ::: '+readpropscontentfile2
-				def ERT_LIST = readpropscontentfile2.tokenize(":");
+				ERT_LIST = readpropscontentfile2.tokenize(":");
 				echo 'ERT_LIST ::: '+ERT_LIST
 		            }
 		         }                         
