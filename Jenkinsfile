@@ -39,6 +39,7 @@ pipeline {
                 	// For example, stopping a Docker container
                	        bat "docker stop ${ertInstance}"
             }
+		echo "---------------Running Containers after STOP----------------"
 		bat 'docker ps'
 		     }
             }
@@ -49,12 +50,13 @@ pipeline {
 		    script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
                 	def ertInstance = ERT_LIST[i]
-                	echo "Trying to stop running instance ${ertInstance}"
-
-                	// Perform any actions or commands for each iteration
+                	echo "Trying to start running instance ${ertInstance}"
+                	
+			    // Perform any actions or commands for each iteration
                 	// For example, stopping a Docker container
                 	bat "docker start ${ertInstance}"
             }
+		     echo "---------------Running Containers after START----------------"
 		     bat 'docker ps'
 		}
             }
