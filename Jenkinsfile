@@ -32,9 +32,7 @@ pipeline {
                 echo "Stop Edge Runtime...!!"
 		     script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
-			    def ert_name = ERT_LIST[i];
-			    echo "111Trying to stop running instance ert_name"
-               		 bat 'docker stop $ert_name'
+			 bat 'docker stop ${ERT_LIST[i]}'
               		 echo "Trying to stop running instance ${ERT_LIST[i]}"
 		    }
 		bat 'docker ps'
@@ -46,10 +44,8 @@ pipeline {
                 echo "Start Edge Runtime...!!" 
 		    script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
-			    def ert_name1 = ERT_LIST[i];
-			    echo "111Trying to stop running instance ert_name1"
-               		 bat 'docker start $ert_name1'
-              		 echo "Trying to start running instance ${ERT_LIST[i]}"
+			bat 'docker start ${ERT_LIST[i]}'
+              		echo "Trying to start running instance ${ERT_LIST[i]}"
 		    }
 		     bat 'docker ps'
 		}
