@@ -3,6 +3,7 @@ pipeline {
     //DOCKER_CTR_NAME=mynginx
     agent any
     stages {
+	    def readpropscontentfile2;
 	    stage('readfromfile') { 
 		steps {
 		      script{
@@ -11,7 +12,7 @@ pipeline {
 		            
 		            for (String item : readpropscontent.split('\n')) {
 		                echo "item ::: "+item
-		                def readpropscontentfile2 = item.split("=")[0];
+		                readpropscontentfile2 = item.split("=")[1];
 		                echo 'readpropscontentfile2 ::: '+readpropscontentfile2
 		            }
 		         }                         
@@ -27,7 +28,7 @@ pipeline {
         stage('Stop Edge Runtime') { 
             steps {
                 echo "Stop Edge Runtime...!!"
-                bat 'docker stop RAHS_Git_POC_ERT_June0011001'
+                bat 'docker stop readpropscontentfile2'
                echo "Trying to stop running instance"
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
 		bat 'docker ps'
@@ -36,7 +37,7 @@ pipeline {
         stage('Start Edge Runtime') { 
             steps {
                 echo "Start Edge Runtime...!!" 
-                bat 'docker start RAHS_Git_POC_ERT_June0011001'
+                bat 'docker start readpropscontentfile2'
             }
         }
     }
