@@ -32,7 +32,7 @@ pipeline {
                 echo "Stop Edge Runtime...!!"
 		     script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
-               		 bat 'docker stop $ERT_LIST[i]'
+               		 bat 'docker stop ${ERT_LIST[i]}'
               		 echo "Trying to stop running instance ERT_LIST[i]"
 		    }
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
@@ -43,7 +43,14 @@ pipeline {
         stage('Start Edge Runtime') { 
             steps {
                 echo "Start Edge Runtime...!!" 
-                bat 'docker start $readpropscontentfile2'
+		    script {
+		    for (int i = 0; i < ERT_LIST.size(); i++) {
+               		 bat 'docker start ${ERT_LIST[i]}'
+              		 echo "Trying to start running instance ERT_LIST[i]"
+		    }
+              		 //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
+		     bat 'docker ps'
+		}
             }
         }
     }
