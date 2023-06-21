@@ -31,10 +31,14 @@ pipeline {
             steps {
                 echo "Stop Edge Runtime...!!"
 		     script {
-		    for (int i = 0; i < ERT_LIST.size(); i++) {
-			 bat "echo ${ERT_LIST[i]}"
-              		 echo "Trying to stop running instance ${ERT_LIST[i]}"
-		    }
+		   for (int i = 0; i < ERT_LIST.size(); i++) {
+                	def ertInstance = ERT_LIST[i]
+                	echo "Trying to stop running instance ${ertInstance}"
+
+                	// Perform any actions or commands for each iteration
+                	// For example, stopping a Docker container
+               	        bat "docker stop ${ertInstance}"
+            }
 		bat 'docker ps'
 		     }
             }
@@ -44,9 +48,13 @@ pipeline {
                 echo "Start Edge Runtime...!!" 
 		    script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
-			bat "echo ${ERT_LIST[i]}"
-              		echo "Trying to start running instance ${ERT_LIST[i]}"
-		    }
+                	def ertInstance = ERT_LIST[i]
+                	echo "Trying to stop running instance ${ertInstance}"
+
+                	// Perform any actions or commands for each iteration
+                	// For example, stopping a Docker container
+                	bat "docker start ${ertInstance}"
+            }
 		     bat 'docker ps'
 		}
             }
