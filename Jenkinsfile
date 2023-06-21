@@ -6,7 +6,7 @@ pipeline {
 	    stage('readfromfile') { 
 		steps {
 		      script{
-		            def readpropscontent = readFile file: 'mypropsfile.properties'
+		            def readpropscontent = readFile file: 'edgeruntime.properties'
 		            echo 'readpropscontent ::: '+readpropscontent
 		            
 		            for (String item : readpropscontent.split('\n')) {
