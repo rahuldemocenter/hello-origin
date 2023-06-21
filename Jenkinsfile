@@ -23,8 +23,8 @@ pipeline {
         stage('Start') { 
             steps {
                 //echo "Start step...!!"
-                 bat 'docker --version'
-				 bat 'docker ps'
+                 sh 'docker --version'
+		 sh 'docker ps'
             }
         }
         stage('Stop Edge Runtime') { 
