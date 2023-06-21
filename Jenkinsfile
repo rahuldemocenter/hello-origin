@@ -33,7 +33,7 @@ pipeline {
 		     script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
 			    def ert_name = ERT_LIST[i];
-			    echo "111Trying to stop running instance $ert_name"
+			    echo "111Trying to stop running instance ert_name"
                		 bat 'docker stop $ert_name'
               		 echo "Trying to stop running instance ${ERT_LIST[i]}"
 		    }
@@ -47,7 +47,7 @@ pipeline {
 		    script {
 		    for (int i = 0; i < ERT_LIST.size(); i++) {
 			    def ert_name1 = ERT_LIST[i];
-			    echo "111Trying to stop running instance $ert_name1"
+			    echo "111Trying to stop running instance ert_name1"
                		 bat 'docker start $ert_name1'
               		 echo "Trying to start running instance ${ERT_LIST[i]}"
 		    }
