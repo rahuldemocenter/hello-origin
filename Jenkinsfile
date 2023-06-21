@@ -3,18 +3,20 @@ pipeline {
     //DOCKER_CTR_NAME=mynginx
     agent any
     stages {
-	    stage('readfromfile') {                  
-     steps {
-          script{
-                def readpropscontent = readProperties file: 'edgeruntime.properties'
-                echo 'readpropscontent ::: '+readpropscontent
-                readpropscontent.each{ k,v ->
-                    echo "KEY = $k :::: VAL = $v "
-                }
-
-             }                         
-     }                  
-}
+	    stage('readfromfile') { 
+		steps {
+		      script{
+		            def readpropscontent = readFile file: 'mypropsfile.properties'
+		            echo 'readpropscontent ::: '+readpropscontent
+		            
+		            for (String item : readpropscontent.split('\n')) {
+		                echo "item ::: "+item
+		                def readpropscontentfile2 = item.split("=")[0];
+		                echo 'readpropscontentfile2 ::: '+readpropscontentfile2
+		            }
+		         }                         
+		 	}
+		    }
         stage('Start') { 
             steps {
                 //echo "Start step...!!"
