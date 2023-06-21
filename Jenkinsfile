@@ -3,7 +3,6 @@ pipeline {
     //DOCKER_CTR_NAME=mynginx
     agent any
     stages {
-	    def readpropscontentfile2;
 	    stage('readfromfile') { 
 		steps {
 		      script{
@@ -12,7 +11,7 @@ pipeline {
 		            
 		            for (String item : readpropscontent.split('\n')) {
 		                echo "item ::: "+item
-		                readpropscontentfile2 = item.split("=")[1];
+		                def readpropscontentfile2 = item.split("=")[1];
 		                echo 'readpropscontentfile2 ::: '+readpropscontentfile2
 		            }
 		         }                         
