@@ -13,7 +13,7 @@ pipeline {
         stage('Stop Edge Runtime') { 
             steps {
                 echo "Stop Edge Runtime...!!"
-                bat 'docker stop RAHS_Edge_Runtime_Ubuntu'
+                bat 'docker stop RAHS_Git_POC_ERT_June0011001'
                echo "Trying to stop running instance"
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
 		bat 'docker ps'
@@ -22,7 +22,7 @@ pipeline {
         stage('Start Edge Runtime') { 
             steps {
                 echo "Start Edge Runtime...!!" 
-                bat 'docker start RAHS_Edge_Runtime04'
+                bat 'docker start RAHS_Git_POC_ERT_June0011001'
             }
         }
     }
