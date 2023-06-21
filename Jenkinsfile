@@ -30,11 +30,10 @@ pipeline {
         stage('Stop Edge Runtime') { 
             steps {
                 echo "Stop Edge Runtime...!!"
-		    for ertName in ERT_LIST 
-			do
-               		 bat 'docker stop $ertName'
-              		 echo "Trying to stop running instance $ertName"
-		    	done
+		    for (int i = 0; i < ERT_LIST.size(); i++) {
+               		 bat 'docker stop ERT_LIST[i]'
+              		 echo "Trying to stop running instance ERT_LIST[i]"
+		    }
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
 		bat 'docker ps'
             }
