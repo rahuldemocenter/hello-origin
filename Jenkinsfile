@@ -27,7 +27,7 @@ pipeline {
         stage('Stop Edge Runtime') { 
             steps {
                 echo "Stop Edge Runtime...!!"
-                bat 'docker stop readpropscontentfile2'
+                bat 'docker stop $readpropscontentfile2'
                echo "Trying to stop running instance"
                //docker stop $DOCKER_CTR_NAME > /dev/null 2>&1; echo $
 		bat 'docker ps'
@@ -36,7 +36,7 @@ pipeline {
         stage('Start Edge Runtime') { 
             steps {
                 echo "Start Edge Runtime...!!" 
-                bat 'docker start readpropscontentfile2'
+                bat 'docker start $readpropscontentfile2'
             }
         }
     }
