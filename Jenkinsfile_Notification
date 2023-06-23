@@ -11,10 +11,10 @@ pipeline {
             color: '#0000FF'           
         }
         }
-        stage ('Invoke_startandstopcontainer_pipeline') {
+       /* stage ('Invoke_pipeline') {
             steps {
                 build job: 'startandstopcontainer'
               }
-        }
+        }*/
 }
 }
