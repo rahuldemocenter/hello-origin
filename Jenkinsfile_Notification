@@ -13,9 +13,8 @@ pipeline {
         }
         stage ('Invoke_startandstopcontainer_pipeline') {
             steps {
-                build job: 'startandstopcontainer')
-                ]
-            }
+                build job: 'startandstopcontainer'
+              }
         }
-    }
+}
 }
